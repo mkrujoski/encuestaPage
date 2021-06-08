@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        html {
+            background-color: black;
+        }
+        h1 {
+            color: white;
+            background-color:lightskyblue;
+            font-size: 80px;
+            text-align: center;
+            font-family: 'Arial';
+            padding: 0px 0px;
+            margin: 10px -20px;
+            margin-top: -50px;
+            
+            border: white solid;
+        }
+        h2 {
+            color: white;
+            font-size: 25px;
+            text-align: center;
+            font-family: 'Arial';
+        }
+        select {
+            font-size: 20px;
+            border: solid;
+            border-radius: 20px;
+            color: cornflowerblue;
+            width: 290px;
+            height: 50px;
+            text-align: center;
+        }
+        body {
+            background-color:cornflowerblue;
+            width: 800px;
+            height: 550px;
+            padding: 100px 20px;
+            margin: 100px 550px;
+            border: white solid;
+            font-family: 'Arial';
+            text-align: center;
+        }
+        textarea {
+            border: cornflowerblue solid;
+            border-radius: 20px;
+            font-size: 20px; 
+            font-family: 'Arial';
+        }
+        p {
+            color: white;
+            font-size: 20px;
+            text-align: center;
+            font-family: 'Arial';
+            padding: 10px;
+        }
+        button {
+            width: 150px;
+            height: 50px;
+            font-size: 20px;
+            background-color: white;
+            color: cornflowerblue;
+            font-family: 'Arial';
+            padding: 0px 10px;
+            border: solid;
+            border-radius: 20px;
+        }
+    </style>
+    <head>
+        <title>Encuesta de opinion</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1>Encuesta de opinion</h1>
+        <h2>------------------------------------------------------------------------------------------------</h2>
+        <p>¿Como calificaria la atencion?</p>
+        <select id="opinion">
+            <option selected value="0">Elija una opcion</option>
+            <option value="mala" id="1">Mala</option>
+            <option value="buena" id="2">Buena</option>
+            <option value="muyBuena" id="3">Muy buena!</option>
+        </select>
+        <p>Dejanos un comentario:</p>
+        <p><textarea name="textarea" id="4" rows="7" cols="40"></textarea></p>
+        <p><button type="button" value="Enviar" onclick = "checkDropDown ('opinion')">Enviar</button></p>
+
+        <script>
+            function checkDropDown (id) {
+                var dropDownObject = document.getElementById (id);
+                var seleccionado = dropDownObject.value ;
+                if(seleccionado == 0) {
+                    alert ("Por favor, seleccione una opcion. No se preocuppe, la encuesta es ANONIMA");
+                }
+                else {
+                    if(document.getElementById("4").value == "") {
+                        alert ("Por favor, deje un comentario. No se preocuppe, la encuesta es ANONIMA");
+                    }
+                    else {
+                        alert ("Muchas gracias! su opinion es importante para nosotros!");
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
